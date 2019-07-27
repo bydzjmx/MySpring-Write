@@ -46,14 +46,7 @@ public class MyDispatchServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //处理用户的请求
-        try {
-            dispatch(req,resp);
-        } catch (Exception e) {
-            resp.getWriter().write("500 Exception, Details:\r\n" + Arrays.toString(e.getStackTrace())
-                    .replaceAll("\\[|\\]","")
-                    .replaceAll(",\\s","\r\n"));
-        }
+        this.doPost(req,resp);
     }
 
     @Override
